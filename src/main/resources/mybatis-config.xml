@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 1.读取数据库信息 -->
+    <properties resource="jdbc.properties"></properties>
+
+    <!-- 2.持久化类别名配置 -->
+    <typeAliases>
+        <package name="">
+    </typeAliases>
+
+    <!-- 3.配置环境，默认的环境id为mysql -->
+    <environments default="mysql">
+        <!-- 配置id为mysql的数据库环境 -->
+        <environment id="mysql">
+            <!-- 使用JDBC的事务管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 配置数据库连接信息(数据库连接池) -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 4.配置Mapper的位置 -->
+    <mappers>
+        <package name="">
+    </mappers>
+</configuration>
